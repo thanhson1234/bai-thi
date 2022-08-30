@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  let so = +prompt("nhập số ")
+  let sum = 0;
+  let check= true;
+  function sumOfListPrime(so) {
+    for (let j = 0; j <= so; j++) {
+      if (j < 2) {
+        continue;
+      } else {
+        for (let i = 2; i <= Math.sqrt(j); i++) {
+          if (j % i === 0) {
+            check = false;
+            break;
+          }
+        }
+      }
+      if (check === true) {
+        sum = sum + j;
+        check = true;
+
+      } else {
+        check = true;
+      }
+    }
+    return sum;
+  }
+  alert("Tổng các số nguyên tố là: " + sumOfListPrime(so));
+</script>
+</html>
